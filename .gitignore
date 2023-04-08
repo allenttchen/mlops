@@ -6,3 +6,5 @@ data/
 mlops.egg-info/
 .idea/
 results/
+cnn_model/
+mlruns/

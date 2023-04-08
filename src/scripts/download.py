@@ -1,7 +1,7 @@
 from pathlib import Path
 import requests
 
-from constants import (
+from src.constants import (
     ROOT_DIR,
     MNIST_URL,
     MNIST_FILENAME
