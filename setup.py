@@ -9,6 +9,7 @@ setup(
       author='Allen Chen',
       author_email='allenttchen@gmail.com',
       py_modules=['models', 'utils', 'scripts'],
+      license='MIT',
       #url='',
       #packages=['distutils', 'distutils.command'],
 )

@@ -1,3 +1,7 @@
+# local package install
+-e .
+
+# third party packages
 streamlit
 mlflow
 numpy
@@ -12,3 +16,5 @@ tqdm
 scikit-learn
 opencv-python-headless
 requests
+dvc
+dvc[gdrive]
