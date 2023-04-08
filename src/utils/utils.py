@@ -1,4 +1,5 @@
 import torch
+import yaml
 
 
 def set_device(mps: bool = False, cuda: bool = False):
@@ -13,3 +14,9 @@ def set_device(mps: bool = False, cuda: bool = False):
 
     torch_device = torch.device(device)
     return torch_device
+
+
+def read_params(config_path):
+    with open(config_path) as yaml_file:
+        config = yaml.safe_load(yaml_file)
+    return config

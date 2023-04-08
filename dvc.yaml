@@ -1,0 +1,9 @@
+stages:
+  train_model:
+    cmd: python src/main.py --config=params.yaml
+    deps:
+      - src/main.py
+    params:
+      - training.epochs
+      - training.batch_size
+      - training.lr

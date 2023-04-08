@@ -1,0 +1,13 @@
+schema: '2.0'
+stages:
+  train_model:
+    cmd: python src/main.py --config=params.yaml
+    deps:
+    - path: src/main.py
+      md5: 4d7bc681acde4e241ec9bfa191f2e459
+      size: 1773
+    params:
+      params.yaml:
+        training.batch_size: 32
+        training.epochs: 10
+        training.lr: 0.001

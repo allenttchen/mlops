@@ -1,0 +1,14 @@
+base:
+  project_name: mlops framework
+  random_state: 42
+
+training:
+  epochs: 10
+  batch_size: 32
+  lr: 0.001
+
+logging:
+  metrics_dir: results/metrics
+  metrics_path: metrics_001.json
+  model_dir: results/saved_models
+  model_path: model_001.pt
