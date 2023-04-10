@@ -2,8 +2,6 @@
 -e .
 
 # third party packages
-streamlit
-mlflow
 numpy
 pandas
 matplotlib
@@ -18,3 +16,6 @@ opencv-python-headless
 requests
 dvc
 dvc[gdrive]
+mlflow
+streamlit
+streamlit-drawable-canvas

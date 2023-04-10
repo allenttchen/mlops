@@ -9,7 +9,8 @@ class Trainer:
     def __init__(self, model, optimizer=None, criterion=None, device=None):
         self.model = model
         self.optimizer = optim.Adam(model.parameters(), lr=0.001) if optimizer is None else optimizer
-        self.criterion = nn.CrossEntropyLoss() if criterion is None else criterion
+        #self.criterion = nn.CrossEntropyLoss() if criterion is None else criterion
+        self.criterion = nn.NLLLoss() if criterion is None else criterion
         self.device = "cpu" if device is None else device
 
         self.model = self.model.to(self.device)
@@ -55,8 +56,8 @@ class Trainer:
             y = y.to(self.device)
 
             # train steps
-            logits = self.model(x)
-            loss = self.criterion(logits, y)
+            probs = self.model(x)
+            loss = self.criterion(probs, y)
             loss.backward()
             self.optimizer.step()
             self.optimizer.zero_grad()
@@ -65,7 +66,7 @@ class Trainer:
             num_in_batch = len(x)
             total_samples += num_in_batch
             epoch_loss += loss.detach().item() * num_in_batch
-            probs = F.softmax(logits, dim=1)
+            #probs = F.softmax(logits, dim=1)
             preds = torch.max(probs, dim=1).indices
             acc = torch.sum(torch.eq(preds, y)).detach().item()
             epoch_acc += acc
@@ -88,14 +89,14 @@ class Trainer:
             y = y.to(self.device)
 
             with torch.no_grad():
-                logits = self.model(x)
-                loss = self.criterion(logits, y)
+                probs = self.model(x)
+                loss = self.criterion(probs, y)
 
                 # compute metrics
                 num_in_batch = len(x)
                 total_samples += num_in_batch
                 epoch_loss += loss.detach().item() * num_in_batch
-                probs = F.softmax(logits, dim=1)
+                #probs = F.softmax(logits, dim=1)
                 preds = torch.max(probs, dim=1).indices
                 acc = torch.sum(torch.eq(preds, y)).detach().item()
                 epoch_acc += acc

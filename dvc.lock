@@ -4,8 +4,8 @@ stages:
     cmd: python src/main.py --config=params.yaml
     deps:
     - path: src/main.py
-      md5: 2d1887446ef9ab5caa1451e8eb21cfd0
-      size: 2720
+      md5: 4f4b2e1555a83fde583c2128bb947ac2
+      size: 3948
     params:
       params.yaml:
         training.batch_size: 32

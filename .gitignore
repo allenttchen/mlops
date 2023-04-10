@@ -8,3 +8,4 @@ mlops.egg-info/
 results/
 cnn_model/
 mlruns/
+mlflow.db

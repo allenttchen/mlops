@@ -18,4 +18,5 @@ mlflow_config:
   experiment_name: cnn
   run_name: mlops_001
   registered_model_path: cnn_model
-  remote_server_uri: http://0.0.0.0:1234
+  registered_model_name: MNISTModel
+  remote_server_uri: sqlite:///mlflow.db
